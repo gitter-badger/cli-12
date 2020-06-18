@@ -1,12 +1,11 @@
 # Command Line Interface
 
 ## Installation
-### Windows 
-```choco install sidemash-cli```
-### Mac 
-```brew install sidemash-cli```
-### Linux 
-```snap install sidemash-cli```
+Windows | Mac | Linux
+--- | --- | ---
+```choco install sidemash-cli``` | ```brew install sidemash-cli``` | ```snap install sidemash-cli```
+
+
 Once installed, you can use it under the name `sdm`.  like ```sdm -h```
 
 ## Configuration
@@ -32,13 +31,15 @@ sdm config show
 ## Usage 
 ### Nomenclature 
 The is pretty staright forward, if You have a resource that you want to Get List Update Patch or Delete, the you should  do 
- ```sdm {resourceTypeDashedCase} {operationNameDashedCase} --{operationArgName1DashedCase} --{operationArgName2DashedCase}```
+ ```
+sdm {resourceTypeDashedCase} {operationNameDashedCase} --{operationArgName1DashedCase} {operationArgValue1DashedCase}
+```
 
 ### Return code
 Every command that succeed will return 0. Every command that failed will return the HTTP Error code of failure.  If you do 
 ```sdm stream get 1234``` and there is no `Stream` resource having id `1234`, the command will fails with the return code 404 : doing ```$?``` just after the command will yield 404. 
 
-### Get ressources
+### Get resources
 ```bash
 sdm stream-square get --id 1234
 ```

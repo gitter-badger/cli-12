@@ -12,7 +12,7 @@ Once installed, you can use it under the name `sdm`.  like ```sdm -h```
 ## Configuration
 First, log in your account and create an `AuthAccess` object to query Sidemash Cloud with API. On creation, you will have a token and a privateKey : Use them to initialize your cli client.
 ### 1 With cli args
-It is possible to pass auth access credentials as an argument of all commands. If set the arguments will override any argument passed by any other methods described bellow.
+It is possible to pass auth access credentials as an argument of all commands. If set the auth arguments will override env argument and config file argument described bellow.
 ```bash 
 sdm stream-square get 1234 --auth-token 1234 --auth-private-key 1234
 ```
@@ -32,10 +32,11 @@ sdm config show
 ## Usage 
 ### Nomenclature 
 The is pretty staright forward, if You have a resource that you want to Get List Update Patch or Delete, the you should  do 
- ```sdm {resourceTypeDashedCase} {operationNameDashedCase} --{operationArgName1DashedCase} --{operationArgName2DashedCase}`.
+ ```sdm {resourceTypeDashedCase} {operationNameDashedCase} --{operationArgName1DashedCase} --{operationArgName2DashedCase}```
 
 ### Return code
-Every command that succeed will return 0. Every command that failed will return the HTTP Error code of failure.  If you do ```sdm stream get 1234``` and there is no `Stream` resource having id `1234`, the command will fails with the return code 404 : doing ```$?``` just after the command will yield 404. 
+Every command that succeed will return 0. Every command that failed will return the HTTP Error code of failure.  If you do 
+```sdm stream get 1234``` and there is no `Stream` resource having id `1234`, the command will fails with the return code 404 : doing ```$?``` just after the command will yield 404. 
 
 ### Get ressources
 ```bash

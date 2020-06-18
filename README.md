@@ -32,7 +32,7 @@ sdm config show
 ### Nomenclature 
 The is pretty staright forward, if You have a resource that you want to Get List Update Patch or Delete, the you should  do 
  ```
-sdm {resourceTypeDashedCase} {operationNameDashedCase} --{operationArgName1DashedCase} {operationArgValue1DashedCase}
+sdm {resourceTypeDashedCase} {operationNameDashedCase} --{operationArgName1DashedCase} {operationArgValue1}
 ```
 
 ### Return code
